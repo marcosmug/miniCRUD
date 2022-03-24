@@ -187,9 +187,16 @@ button:hover {
 }
 
 form {
-    margin: auto;
+    background-color: yellow;
+    width: 150px;
+    height: 150px;
+}
+
+.login-triangle {
+    display: flex;
     align-items: center;
 }
+
 
 .itempic {
     background-image: url('../img/chica.png');
