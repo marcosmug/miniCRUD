@@ -6,28 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <title>Document</title>
+    <title>login</title>
 </head>
 <main>
 
     <body>
-        <section id="home">
-            <div class="banner">
-                <div class="textbackground">
-                    <div class="login">
-                        
-                    
-                    <div class="login-triangle"></div>
-
-                        <h2 class="login-header">Log in</h2>
-
-                        <form class="login-container">
-                            <p><input type="email" placeholder="Email"></p>
-                            <p><input type="password" placeholder="Password"></p>
-                            <p><input type="submit" value="Log in"></p>
-                        </form>
+        <div class="banner">
+            <div class="container">
+                <h2>Login</h2>
+                <form class = "yellow" action="">
+                    <input type="text" name="username" id="username" placeholder="username">
+                    <input type="password" name="pass" id="pass" placeholder="password">
+                    <div class="btns">
+                        <button type="submit">Login</button>
+                        <a href="signup.php"><button type="button" id="sign-up">Sign Up</button></a>
                     </div>
-                </div>
+
+                </form>
                 <header>
                     <nav>
                         <div class="navbar">
@@ -42,11 +37,12 @@
                     </nav>
                 </header>
             </div>
-            </div>
-            <div class="maintext">
-        </section>
         </div>
 
+        </section>
+        </div>
+        </div>
     </body>
+</main>
 
 </html>

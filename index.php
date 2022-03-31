@@ -1,3 +1,6 @@
+<?php
+include_once('connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,12 +29,15 @@
                         <div class="navbar">
                             <img src="img/logo.png" class="logo">
                             <ul>
-                                <li><a href="#home">home</a></li>
-                                <li><a href="#eetmenu">menu</a></li>
-                                <li><a href="#">home</a></li>
-                                <li><a href="#">home</a></li>
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#eetmenu">Menu</a></li>
+                                <li><a href="">Home</a></li>
+                                <li class="toggle" data-toggle=".shopping-cart"><a>Winkelwagen</a></li>
                                 <li><a href="login.php">Login</a></li>
                             </ul>
+                            <div class="shopping-cart">
+
+                            </div>
                     </nav>
                 </header>
             </div>
@@ -46,11 +52,28 @@
                     <div class="menu-content">
                         <div class="menu-content-2">
                             <div class="items">
-                            <?php    
-                            for ($i=0; $i <8 ; $i++) {
-                                include("itembox.php");
-                            }
-                            ?>
+                                <?php
+                                    $sql = "SELECT * FROM menukaart";
+                                    $stmt = $connect -> prepare($sql);
+                                    $stmt -> execute();
+                                    $result = $stmt -> fetchAll();
+
+                                    foreach($result as $res) {
+                                ?>
+                                <div class="itembox">
+                                    <div class="itemname">
+                                        <?php echo "<h3>{$res["name"]}</h3>"; ?>
+                                        <?php echo "<h3>{$res["price"]}</h3>"; ?>
+                                        <div class="itembutton">
+                                            <button>Toevoegen aan winkel
+                                                wagen</button>
+                                            <div class="itempic">
+                                                <?php echo "<img src='img/{$res["image"]}'>"; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php }?>
                                 <h1>placehoder pic hier</h1>
                             </div>
                         </div>

@@ -1,29 +1,19 @@
-function makeEaseInOut(timing) {
-    return function(timeFraction) {
-      if (timeFraction < .5)
-        return timing(2 * timeFraction) / 2;
-      else
-        return (2 - timing(2 * (1 - timeFraction))) / 2;
-    }
-  }
+const toggles = document.querySelectorAll(".toggle");
 
+toggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+        // Convert the data to array
+        const allElementNames = toggle.getAttribute("data-toggle").split(" ");
 
-  function bounce(timeFraction) {
-    for (let a = 0, b = 1; 1; a += b, b /= 2) {
-      if (timeFraction >= (7 - 4 * a) / 11) {
-        return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
-      }
-    }
-  }
+        // For each element in the array, toggle the display: flex/block <--> none
+        allElementNames.forEach((elem) => {
+            elem = document.querySelector(elem);
 
-  let bounceEaseInOut = makeEaseInOut(bounce);
-
-  brick.onclick = function() {
-    animate({
-      duration: 3000,
-      timing: bounceEaseInOut,
-      draw: function(progress) {
-        brick.style.left = progress * 500 + 'px';
-      }
+            if (getComputedStyle(elem).display == "flex" || getComputedStyle(elem).display == "block") {
+                elem.style.display = "none";
+            } else {
+                elem.style.display = "flex";
+            }
+        });
     });
-  };
+});
