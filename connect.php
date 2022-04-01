@@ -14,7 +14,7 @@ $opt = [
 
 try {
     $connect = new PDO($dsn, $user, $pass, $opt);
-    echo "Verbinding is gemaakt.";
+    // echo "Verbinding is gemaakt.";
 } catch (PD0Exception $e) {
     echo $e->getMessage();
     die("Sorry, Database probleem");
