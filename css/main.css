@@ -297,4 +297,20 @@ table {
     
 }
 
+ #editbutton{
+    width: 100px;
+    height: 40px;
+    background-color: whitesmoke;
+}
+
+#createbutton {
+    width: 100px;
+    height: 40px;
+    background-color: whitesmoke;
+}
+
+.info {
+    display: flex;
+    align-self: center;
+}
 /* koop button veranderen dat het naar een anderen page gaat waar je pizza kan bestellen */

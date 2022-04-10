@@ -1,6 +1,17 @@
 <?php
-include_once('connect.php');
+include_once('includes/connect.php');
 ?>
+
+<?php 
+session_start();
+if (isset($_SESSION["rol"])) {
+    if ($_SESSION["rol"]!="admin") {
+        header("Location: ../index.php");
+        exit;
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,9 +27,9 @@ include_once('connect.php');
 
         <body>
             <!-- <header> -->
-             <nav>
-              <h1>Admin page</h1>      
-             <!-- <div class="navbar">
+            <nav>
+                <h1>Admin page</h1>
+                <!-- <div class="navbar">
                         <img src="img/logo.png" class="logo">
                         <ul>
                             <li><a href="#home">Home</a></li>
@@ -30,17 +41,47 @@ include_once('connect.php');
                         <div class="shopping-cart">
 
                         </div> -->
-                </nav> 
+            </nav>
             <table>
                 <tr>
                     <th>ID</th>
+                    <br>
                     <th>Name</th>
+                    <br>
+                    <th>Price</th>
+                    <br>
                     <th>Category</th>
-                    <th>price</th>
+                    <br>
                     <th>amount</th>
+                    <br>
+                    <th>img</th>
+                    <br>
                 </tr>
 
-                <?php 
+                <div class="itemadmin">
+                    <form action="includes/create.php" method="post">
+                        <label for="id">id:</label><br>
+                        <input type="text" name="id"><br>
+                        <br>
+                        <label for="name">name:</label><br>
+                        <input type="text" id="name" name="name">
+                        <br>
+                        <label for="category">category:</label><br>
+                        <input type="text" id="category" name="category">
+                        <br>
+                        <label for="price">price:</label><br>
+                        <input type="text" id="price" name="price">
+                        <br>
+                        <label for="amount">amount:</label><br>
+                        <input type="text" id="amount" name="amount">
+                        <br>
+                        <button id="createbutton" type="submit" name="create" value="create">create</button>
+                        <br>
+                        <button id="editbutton" type="sumbit" name="edit" value="edit">edit</button>
+                    </form>
+                </div>
+                <div class="info">
+                    <?php 
                     $sql = "SELECT * FROM menukaart";
                     $stmt = $connect -> prepare($sql);
                     $stmt -> execute();
@@ -54,9 +95,12 @@ include_once('connect.php');
                         echo "<td>{$res['category']}</td>";
                         echo "<td>{$res['amount']}</td>";
                         echo "<td>{$res['image']}</td>";
+                        echo "<td><a href='includes/create.php?id={$res['id']}'>delete</a></td>";
                         echo "</tr>";
                     } ?>
+                </div>
             </table>
+
             <!-- </header> -->
         </body>
     </div>
@@ -64,4 +108,5 @@ include_once('connect.php');
 <footer>
     <li><a href="index.php">Home</a></li>
 </footer>
+
 </html>

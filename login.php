@@ -1,3 +1,7 @@
+<?php include_once("includes/connect.php"); 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,11 +18,12 @@
         <div class="banner">
             <div class="container">
                 <h2>Login</h2>
-                <form class = "yellow" action="">
+                <form class = "yellow" action="includes/loginHandler.php" method="post">
                     <input type="text" name="username" id="username" placeholder="username">
-                    <input type="password" name="pass" id="pass" placeholder="password">
+                    <input type="password" name="password" id="password" placeholder="password">
                     <div class="btns">
                         <button type="submit">Login</button>
+
                         <a href="signup.php"><button type="button" id="sign-up">Sign Up</button></a>
                     </div>
 
@@ -28,11 +33,19 @@
                         <div class="navbar">
                             <img src="img/logo.png" class="logo">
                             <ul>
+
                                 <li><a href="index.php">home</a></li>
-                                <li><a href="index.php">menu</a></li>
-                                <li><a href="#">home</a></li>
-                                <li><a href="#">home</a></li>
-                                <li><a href="login.php">Login</a></li>
+                                <?php 
+                                if (isset($_SESSION["rol"])) {
+                                    echo '<li><a href="logout.php">logout</a></li>';
+                                    if ($_SESSION["rol"]=== "admin") {
+                                        echo '<li><a href="admin.php">admin</a></li>';
+                                    }
+                                }
+                                else {
+                                    echo '<li><a href="login.php">Login</a></li>';
+                                } 
+                                ?>
                             </ul>
                     </nav>
                 </header>

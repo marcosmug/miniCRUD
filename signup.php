@@ -1,3 +1,10 @@
+<?php include_once("includes/connect.php"); 
+session_start();
+if(isset($_POST["user"])){
+    $_SESSION["username"] = $_POST["user"];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

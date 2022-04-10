@@ -1,5 +1,6 @@
 <?php
-include_once('connect.php');
+include_once('includes/connect.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,9 +32,18 @@ include_once('connect.php');
                             <ul>
                                 <li><a href="#home">Home</a></li>
                                 <li><a href="#eetmenu">Menu</a></li>
-                                <li><a href="">Home</a></li>
+                                <?php 
+                                if (isset($_SESSION["rol"])) {
+                                    echo '<li><a href="logout.php">logout</a></li>';
+                                    if ($_SESSION["rol"]=== "admin") {
+                                        echo '<li><a href="admin.php">admin</a></li>';
+                                    }
+                                }
+                                else {
+                                    echo '<li><a href="login.php">Login</a></li>';
+                                } 
+                                ?>
                                 <li class="toggle" data-toggle=".shopping-cart"><a>Winkelwagen</a></li>
-                                <li><a href="login.php">Login</a></li>
                             </ul>
                             <div class="shopping-cart">
 
