@@ -22,26 +22,14 @@ if (isset($_SESSION["rol"])) {
     <link rel="stylesheet" href="css/main.css">
     <title>Admin</title>
 </head>
-<main>
-    <div class="body-admin">
 
-        <body>
-            <!-- <header> -->
+<body>
+    <main>
+        <div class="body-admin">
             <nav>
                 <h1>Admin page</h1>
-                <!-- <div class="navbar">
-                        <img src="img/logo.png" class="logo">
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#eetmenu">Menu</a></li>
-                            <li><a href="">Home</a></li>
-                            <li class="toggle" data-toggle=".shopping-cart"><a>Winkelwagen</a></li>
-                            <li><a href="login.php">Login</a></li>
-                        </ul>
-                        <div class="shopping-cart">
-
-                        </div> -->
             </nav>
+            
             <table>
                 <tr>
                     <th>ID</th>
@@ -87,26 +75,25 @@ if (isset($_SESSION["rol"])) {
                     $stmt -> execute();
                     $result = $stmt -> fetchAll();
                     
-                    foreach($result as $res) { 
-                        echo "<tr>";
-                        echo "<td>{$res['id']}</td>";
-                        echo "<td>{$res['name']}</td>";
-                        echo "<td>{$res['price']}</td>";
-                        echo "<td>{$res['category']}</td>";
-                        echo "<td>{$res['amount']}</td>";
-                        echo "<td>{$res['image']}</td>";
-                        echo "<td><a href='includes/create.php?id={$res['id']}'>delete</a></td>";
-                        echo "</tr>";
-                    } ?>
+                    foreach($result as $res) { ?>
+                        <tr>
+                        <td><?php echo $res['id'] ?></td>
+                        <td><?php echo $res['name'] ?></td>
+                        <td><?php echo $res['price'] ?></td>
+                        <td><?php echo $res['category'] ?></td>
+                        <td><?php echo $res['amount'] ?></td>
+                        <td><?php echo $res['image'] ?></td>
+                        <td><a href="includes/create.php?id=<?php echo $res['id'] ?>">delete</a></td>
+                        </tr>
+                    <?php } ?>
                 </div>
             </table>
+        </div>
+    </main>
 
-            <!-- </header> -->
-        </body>
-    </div>
-</main>
-<footer>
-    <li><a href="index.php">Home</a></li>
-</footer>
+    <footer>
+        <li><a href="index.php">Home</a></li>
+    </footer>
+</body>
 
 </html>

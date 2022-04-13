@@ -20,9 +20,6 @@ session_start();
                 <div class="textbackground">
                     <h1>Freddy fazbear`s<br>
                         Pizzeria
-                        <div id="path">
-                            <div id="brick"></div>
-                        </div>
                     </h1>
                 </div>
                 <header>
