@@ -313,4 +313,14 @@ table {
     display: flex;
     align-self: center;
 }
+
+.searchbar {
+    width: 300px;
+    /* height: 44px; */
+    /* border-radius: 5px; */
+    
+    display: flex;
+    flex-direction: row;
+    /* align-self: flex-end; */
+  }
 /* koop button veranderen dat het naar een anderen page gaat waar je pizza kan bestellen */

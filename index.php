@@ -58,16 +58,34 @@ session_start();
         <section id="eetmenu">
             <div class="menu-background">
                 <div class="menu">
+                <div class="searchbar">
+                            
+                            <form id="form" action = "index.php" method = "get">
+                                <input type="search" id="search" name="search" placeholder="Search...">
+                                <button type= "sumbit">Search</button>
+                            </form>
+                            
+                        </div>
                     <!-- <img src="img/menubackground.png"> -->
                     <div class="menu-content">
                         <div class="menu-content-2">
                             <div class="items">
                                 <?php
+                                if (isset($_GET["search"])) {
+                                    $search = "%".$_GET['search']."%";
+
+                                    $sql = "SELECT * FROM menukaart WHERE
+                                    name LIKE :search";
+                                    $stmt = $connect -> prepare($sql);
+                                    $stmt -> bindParam(":search",$search);
+                                    $stmt -> execute();
+                                    $result = $stmt -> fetchAll();
+                                } else {
                                     $sql = "SELECT * FROM menukaart";
                                     $stmt = $connect -> prepare($sql);
                                     $stmt -> execute();
                                     $result = $stmt -> fetchAll();
-
+                                }
                                     foreach($result as $res) {
                                 ?>
                                 <div class="itembox">
@@ -84,10 +102,10 @@ session_start();
                                     </div>
                                 </div>
                                 <?php }?>
-                                <h1>placehoder pic hier</h1>
+
                             </div>
                         </div>
-                        <h1>betaal knop hier</h1>
+
                     </div>
                 </div>
             </div>
