@@ -6,9 +6,12 @@ include_once('includes/connect.php');
 session_start();
 if (isset($_SESSION["rol"])) {
     if ($_SESSION["rol"]!="admin") {
-        header("Location: ../index.php");
+        header("Location: index.php");
         exit;
     }
+} else {
+    header("Location: index.php");
+    exit;
 }
 ?>
 
@@ -84,8 +87,10 @@ if (isset($_SESSION["rol"])) {
                         <td><?php echo $res['amount'] ?></td>
                         <td><?php echo $res['image'] ?></td>
                         <td><a href="includes/create.php?id=<?php echo $res['id'] ?>">delete</a></td>
+                        <!-- <td><a href="includes/create.php?edit=<?php echo $res['id'] ?>">edit</a></td> -->
                         </tr>
                     <?php } ?>
+                    
                 </div>
             </table>
         </div>

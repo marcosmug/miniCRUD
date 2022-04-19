@@ -17,3 +17,7 @@ toggles.forEach((toggle) => {
         });
     });
 });
+
+function myFunction() {
+    alert("Werkt helaas niet :( ");
+  }
