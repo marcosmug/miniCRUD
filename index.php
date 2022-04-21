@@ -12,13 +12,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fruktur&family=Josefin+Sans:ital,wght@1,300&family=Prompt:wght@300&family=Roboto+Slab&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fruktur&family=Josefin+Sans:ital,wght@1,300&family=Prompt:wght@300&family=Roboto+Slab&family=Roboto:ital,wght@1,100&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <title>mainpage</title>
 </head>
-<main>
 
-    <body>
+<body>
+    <main>
         <section id="home">
             <div class="banner">
                 <div class="textbackground">
@@ -60,14 +62,14 @@
             <h1 id="menutext">Menu</h1>
             <div class="menu-background">
                 <div class="menu">
-                <div class="searchbar">
-                            
-                            <form id="form" action = "index.php" method = "get">
-                                <input type="search" id="search" name="search" placeholder="Search...">
-                                <button type= "sumbit">Search</button>
-                            </form>
-                            
-                        </div>
+                    <div class="searchbar">
+
+                        <form id="form" action="index.php" method="get">
+                            <input type="search" id="search" name="search" placeholder="Search...">
+                            <button type="sumbit">Search</button>
+                        </form>
+
+                    </div>
                     <!-- <img src="img/menubackground.png"> -->
                     <div class="menu-content">
                         <div class="menu-content-2">
@@ -95,7 +97,7 @@
                                         <?php echo "<h3>{$res["name"]}</h3>"; ?>
                                         <?php echo "<h3>{$res["price"]}</h3>"; ?>
                                         <div class="itembutton">
-                                            <button id ="demo" onclick="myFunction()">Toevoegen aan winkel
+                                            <button id="demo" onclick="myFunction()">Toevoegen aan winkel
                                                 wagen</button>
                                             <div class="itempic">
                                                 <?php echo "<img src='img/{$res["image"]}'>"; ?>
@@ -113,8 +115,9 @@
             </div>
         </section>
         <script src="js/main.js"></script>
-    </body>
-</main>
+    </main>
+</body>
+
 <!-- <footer>
     
 </footer> -->

@@ -94,9 +94,6 @@ if (isset($_SESSION["rol"])) {
         </div>
     </main>
 
-    <footer id = "adminfooter">
-        <li><a href="index.php">Home</a></li>
-    </footer>
 </body>
 
 </html>
