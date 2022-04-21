@@ -23,7 +23,7 @@
 	background-color: rgb(48, 46, 46);
 }
 
-header {
+#mainheader {
 	top: 0;
 	position: fixed;
 	display: flex;
@@ -41,7 +41,7 @@ html {
 .banner {
 	width: 100%;
 	height: 100vh;
-	/* background-image: url("../img/pizza.jpg"); */
+
 	background-image: url("../img/mainbackground.jpg");
 	background-size: cover;
 	background-position: center;
@@ -182,6 +182,10 @@ section {
 	width: 100%;
 }
 
+.loginbanner {
+	
+}
+
 .items {
 	display: flex;
 	flex-direction: row;
@@ -222,8 +226,8 @@ form {
 .itempic {
 	/* background-image: url("../img/itempic.png"); */
 	background-position: center;
-	width: 250px;
-	height: 250px;
+	width: 200px;
+	height: 200px;
 }
 
 .itempic img {
@@ -311,5 +315,17 @@ table {
 	width: 300px;
 	display: flex;
 	flex-direction: row;
+}
+
+#headeradmin{
+	background-color:white;
+	height: 80px;
+	width: 100%;
+	text-align: center;
+}
+
+#adminfooter {
+	height: 90px;
+	width: 100%;
 }
 /* koop button veranderen dat het naar een anderen page gaat waar je pizza kan bestellen */

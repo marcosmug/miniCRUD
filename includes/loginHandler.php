@@ -9,10 +9,11 @@ if ($stmt->rowCount() > 0) {
             if ($_POST["password"] == $result["password"]){
                 $_SESSION["username"] = $result["username"];
                 $_SESSION["rol"] = $result["rol"];
-                header("Location: ../index.php");
-                exit;
             }
         }
     }
 }
+
+header("Location: ../index.php");
+exit;
                      ?>
