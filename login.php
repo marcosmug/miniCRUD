@@ -19,13 +19,13 @@
         <div class="banner">
             <div class="container">
                 <h2>Login</h2>
-                <form class = "white" action="includes/loginHandler.php" method="post">
+                <form class="white" action="includes/loginHandler.php" method="post">
                     <input type="text" name="username" id="username" placeholder="username">
                     <input type="password" name="password" id="password" placeholder="password">
                     <div class="btns">
-                        <button class = "grey" type="submit">Login</button>
+                        <button class="grey" type="submit">Login</button>
 
-                        <!-- <a href="signup.php"><button type="button" id="sign-up">Sign Up</button></a> -->
+
                     </div>
 
                 </form>

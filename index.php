@@ -70,7 +70,6 @@
                         </form>
 
                     </div>
-                    <!-- <img src="img/menubackground.png"> -->
                     <div class="menu-content">
                         <div class="menu-content-2">
                             <div class="items">
