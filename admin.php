@@ -1,11 +1,9 @@
 <?php
 include_once('includes/connect.php');
-
-
- 
 session_start();
+
 if (isset($_SESSION["rol"])) {
-    if ($_SESSION["rol"]!="admin") {
+    if ($_SESSION["rol"] != "admin") {
         header("Location: index.php");
         exit;
     }
