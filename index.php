@@ -67,7 +67,6 @@ session_start();
                             </form>
                             
                         </div>
-                    <!-- <img src="img/menubackground.png"> -->
                     <div class="menu-content">
                         <div class="menu-content-2">
                             <div class="items">
@@ -114,8 +113,5 @@ session_start();
         <script src="js/main.js"></script>
     </body>
 </main>
-<!-- <footer>
-    
-</footer> -->
 
 </html>
