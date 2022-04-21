@@ -1,8 +1,8 @@
 <?php
 include_once('includes/connect.php');
-?>
 
-<?php 
+
+ 
 session_start();
 if (isset($_SESSION["rol"])) {
     if ($_SESSION["rol"]!="admin") {
@@ -29,10 +29,12 @@ if (isset($_SESSION["rol"])) {
 <body>
     <main>
         <div class="body-admin">
-            <nav>
-                <h1>Admin page</h1>
-            </nav>
-            
+            <header id ="headeradmin">
+            <h1>Admin page</h1>
+                <nav>
+                <h1><a href="index.php">Home</a></h1>
+                </nav>
+            </header>
             <table>
                 <tr>
                     <th>ID</th>
@@ -67,8 +69,6 @@ if (isset($_SESSION["rol"])) {
                         <input type="text" id="amount" name="amount">
                         <br>
                         <button id="createbutton" type="submit" name="create" value="create">create</button>
-                        <br>
-                        <button id="editbutton" type="sumbit" name="edit" value="edit">edit</button>
                     </form>
                 </div>
                 <div class="info">
@@ -79,7 +79,7 @@ if (isset($_SESSION["rol"])) {
                     $result = $stmt -> fetchAll();
                     
                     foreach($result as $res) { ?>
-                        <tr>
+                    <tr>
                         <td><?php echo $res['id'] ?></td>
                         <td><?php echo $res['name'] ?></td>
                         <td><?php echo $res['price'] ?></td>
@@ -87,16 +87,16 @@ if (isset($_SESSION["rol"])) {
                         <td><?php echo $res['amount'] ?></td>
                         <td><?php echo $res['image'] ?></td>
                         <td><a href="includes/create.php?id=<?php echo $res['id'] ?>">delete</a></td>
-                        <!-- <td><a href="includes/create.php?edit=<?php echo $res['id'] ?>">edit</a></td> -->
-                        </tr>
+                        <td><a href="includes/edit.php?edit=<?php echo $res['id'] ?>">edit</a></td>
+                    </tr>
                     <?php } ?>
-                    
+
                 </div>
             </table>
         </div>
     </main>
 
-    <footer>
+    <footer id = "adminfooter">
         <li><a href="index.php">Home</a></li>
     </footer>
 </body>

@@ -20,4 +20,27 @@ toggles.forEach((toggle) => {
 
 function myFunction() {
     alert("Werkt helaas niet :( ");
-  }
+}
+
+    const loginPassword = document.querySelector("input[type=password]");
+    const loginButton = document.querySelector("button[type=submit]");
+    const loginForm = document.querySelector("form");
+
+
+    loginButton.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                let msg = "";
+
+                if (loginPassword.value.length <= 2) {
+                    msg += "Wachtwoord is te kort (minimaal 2 tekens)\n";
+                }
+
+                if (msg == "") {
+                    loginForm.submit();
+                } else {
+                    alert(msg.trim());
+                }
+
+            
+});

@@ -28,7 +28,7 @@ session_start();
                     </div>
 
                 </form>
-                <header>
+                <header id="mainheader">
                     <nav>
                         <div class="navbar">
                             <img src="img/logo.png" class="logo">
@@ -55,6 +55,7 @@ session_start();
         </section>
         </div>
         </div>
+        <script src="js/main.js"></script>
     </body>
 </main>
 

@@ -25,7 +25,7 @@ session_start();
                         Pizzeria
                     </h1>
                 </div>
-                <header>
+                <header id="mainheader">
                     <nav>
                         <div class="navbar">
                             <img src="img/logo.png" class="logo">
