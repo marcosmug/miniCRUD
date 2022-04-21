@@ -1,7 +1,8 @@
 <?php
-include_once('includes/connect.php');
-session_start();
+    include_once('includes/connect.php');
+    session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
