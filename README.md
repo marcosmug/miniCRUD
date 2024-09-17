@@ -1,2 +1,2 @@
-# miniGRUD
-Aiden was hier
+# miniCRUD
+minicrud opdracht voor school
